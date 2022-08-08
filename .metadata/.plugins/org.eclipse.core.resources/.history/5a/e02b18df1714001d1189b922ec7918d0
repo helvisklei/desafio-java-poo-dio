@@ -1,0 +1,44 @@
+package br.controle.equipamento.dio.dominio;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Period;
+
+public abstract class Equipamento {
+
+	protected String nome;
+	protected String descricao;
+	protected int quantidade;
+	private LocalDate dataInicial = LocalDate.now(); //LocalDate.of(2010, 3, 7);
+	private LocalDate dataFinal = LocalDate.now();
+	
+	public double calcularPeriodo(){
+		Period periodo = Period.between(dataInicial, dataFinal);
+		return this.periodo.toTotalMonths();
+		
+	}
+	//Period periodo = Period.between(localDateAntigo, localDateNovo);
+	//System.out.println("Apenas meses: " + periodo.toTotalMonths());
+	
+	//String strLocalDateTime2 = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+}

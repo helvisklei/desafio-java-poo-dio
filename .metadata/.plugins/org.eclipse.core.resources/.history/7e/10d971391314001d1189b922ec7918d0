@@ -1,0 +1,9 @@
+package br.controle.equipamento.dio.dominio;
+
+public class Celular extends Equipamento {
+	
+	private String imei;
+	private String cor;
+	private String chip;
+
+}

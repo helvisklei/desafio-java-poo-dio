@@ -1,0 +1,7 @@
+package br.controle.equipamento.dio.dominio;
+
+public class Maquineta extends Equipamento{
+	String pos;
+	String tombo;
+
+}

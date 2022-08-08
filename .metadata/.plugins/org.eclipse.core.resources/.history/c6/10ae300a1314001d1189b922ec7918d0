@@ -1,0 +1,9 @@
+package br.controle.equipamento.dio.dominio;
+
+public abstract class Equipamento {
+
+	protected String nome;
+	protected String descricao;
+	protected int quantidade;
+
+}

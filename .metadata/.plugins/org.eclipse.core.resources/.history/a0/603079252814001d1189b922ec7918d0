@@ -1,0 +1,27 @@
+package br.controle.equipamento.dio;
+
+import java.time.LocalDate;
+
+import br.controle.equipamento.dio.dominio.Celular;
+import br.controle.equipamento.dio.dominio.Maquineta;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Celular celular1 = new Celular("teste de imei 1","Vermelho","Vivo");
+		Maquineta maquineta1 = new Maquineta("lllp44521","123465","Claro");
+		
+		//celular1.setImei("teste de imei 1");
+	//	celular1.setCor("Vermelho");
+		//celular1.setChip("VIVO");
+		
+		
+		
+		System.out.println(celular1);
+		
+		
+
+	}
+
+}

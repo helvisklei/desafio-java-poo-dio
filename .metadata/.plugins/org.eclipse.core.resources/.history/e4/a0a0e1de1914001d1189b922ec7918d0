@@ -1,0 +1,68 @@
+package br.controle.equipamento.dio.dominio;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Period;
+
+public abstract class Equipamento {
+
+	protected String nome;
+	protected String descricao;
+	protected int quantidade;
+	private LocalDate dataInicial = LocalDate.of(2010, 3, 7);
+	private LocalDate dataFinal = LocalDate.of(2015, 3,5);
+	private Object periodo;
+	
+	public double calcularPeriodo(){
+		Period periodo = Period.between(dataInicial, dataFinal);
+		return toString(periodo.toTotalMonths());
+		
+	}
+	//Period periodo = Period.between(localDateAntigo, localDateNovo);
+	//System.out.println("Apenas meses: " + periodo.toTotalMonths());
+	
+	//String strLocalDateTime2 = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+	
+	public String getNome() {
+		return nome;
+	}
+	public LocalDate getDataInicial() {
+		return dataInicial;
+	}
+
+	public void setDataInicial(LocalDate dataInicial) {
+		this.dataInicial = dataInicial;
+	}
+
+	public LocalDate getDataFinal() {
+		return dataFinal;
+	}
+
+	public void setDataFinal(LocalDate dataFinal) {
+		this.dataFinal = dataFinal;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public String toString(long l) {
+		return "Equipamento [nome=" + nome + ", descricao=" + descricao + ", quantidade=" + quantidade
+				+ ", dataInicial=" + dataInicial + ", dataFinal=" + dataFinal + ", periodo=" + periodo + "]";
+	}
+	
+	
+
+}

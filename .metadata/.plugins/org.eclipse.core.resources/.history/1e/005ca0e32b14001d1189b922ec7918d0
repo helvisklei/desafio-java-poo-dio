@@ -1,0 +1,66 @@
+package br.controle.equipamento.dio.dominio;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Celular extends Equipamento {
+
+	private String imei;
+	private String cor;
+	private String chip;
+
+	public Celular(String imei, String cor, String chip,int quantidade,LocalDate dataInicial, LocalDate dataFinal) {
+		this.imei = imei;
+		this.cor = cor;
+		this.chip = chip;		
+
+	}
+	
+	public String getImei() {
+		return imei;
+	}
+
+	public void setImei(String imei) {
+		this.imei = imei;
+	}
+
+	public String getCor() {
+		return cor;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+
+	public String getChip() {
+		return chip;
+	}
+
+	public void setChip(String chip) {
+		this.chip = chip;
+	}
+
+	@Override
+	public String toString() {
+		return "Celular [imei=" + imei + ", cor=" + cor + ", chip=" + chip + "]";
+	}
+
+	@Override
+	public double calcularPeriodo(LocalDate localDateAntigo) {
+		Period periodo = Period.between(dataInicial, dataFinal);
+		return periodo.toTotalMonths();
+		
+	}
+
+	@Override
+	public double calcularPeriodo() {
+		Period periodo = Period.between(dataInicial, dataFinal);
+		System.out.println("Apenas meses: " + periodo.toTotalMonths());
+		return this.calcularPeriodo();
+	}
+	
+	
+
+}
